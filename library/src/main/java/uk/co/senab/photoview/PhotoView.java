@@ -89,7 +89,9 @@ public class PhotoView extends ImageView implements IPhotoView {
 
     @Override
     public boolean setDisplayMatrix(Matrix finalRectangle) {
-        return mAttacher.setDisplayMatrix(finalRectangle);
+        boolean result = mAttacher.setDisplayMatrix(finalRectangle);
+        mAttacher.updateDisplayMatrix();
+        return result;
     }
 
     @Override
@@ -281,6 +283,10 @@ public class PhotoView extends ImageView implements IPhotoView {
     protected void onDetachedFromWindow() {
         mAttacher.cleanup();
         super.onDetachedFromWindow();
+    }
+
+    public void update() {
+
     }
 
 }

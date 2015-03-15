@@ -1092,4 +1092,12 @@ public class PhotoViewAttacher implements IPhotoView, View.OnTouchListener,
             }
         }
     }
+
+    /**
+     * Calls to checkAndDisplayMatrix. Required call after setting a display matrix.
+     */
+    protected void updateDisplayMatrix() {
+        checkAndDisplayMatrix();
+    }
+
 }
